@@ -1,9 +1,13 @@
 import '../styles/globals.css'
+import {ContextWrapper} from "../context/state"
 
 function MyApp({ Component, pageProps }) {
 
   return (
-    <Component {...pageProps} />
+    <ContextWrapper>
+      <Component {...pageProps} />
+    </ContextWrapper>
+    
   )
 }
 
