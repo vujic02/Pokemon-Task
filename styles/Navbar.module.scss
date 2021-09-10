@@ -22,12 +22,11 @@
     font-size: 2rem;
     font-weight: 500;
     color: var(--white);
-    opacity: 1;
-    transition: opacity 100ms ease;
+    transition: color 200ms ease;
 
     &:hover {
-      transition: opacity 300ms ease;
-      opacity: 0.9;
+      transition: color 300ms ease;
+      color: var(--yellow);
     }
   }
 

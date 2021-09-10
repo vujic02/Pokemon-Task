@@ -1,12 +1,18 @@
 import React from 'react'
 import Navbar from '../../components/Navbar';
+import Head from "next/head"
 
 const PokemonDetails = ({pokemon}) => {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Pokemon | {pokemon.name}</title>
+        <meta name="description" content={`Learn more about ${pokemon.name}`} />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Navbar />
       {pokemon.name}
-    </div>
+    </>
   )
 }
 
