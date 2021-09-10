@@ -1,10 +1,19 @@
-import React, {useState} from "react"
+import React, {useState, useContext, useEffect} from "react"
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import { PokemonContext } from "../context/state"
+
 
  const Home = ({pokemons}) => {
 
-  const [visible, setVisible] = useState(9);
+  const {pokemonList, setPokemonList, visible, setVisible} = useContext(PokemonContext);
+
+  useEffect(() => {
+    // After the page loads, set the context state to the pokemons that we fetched
+    return setPokemonList(pokemons);
+  }, [])
+
 
   return (
     <div>
@@ -16,12 +25,14 @@ import styles from '../styles/Home.module.css'
 
       <div className={styles.container}>
         {pokemons.results.slice(0, visible).map((pokemon, idx) => (
-        <div key={idx}>
-          <img className={styles.pokemonImage} src={`https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`} />
-          <p>{pokemon.name}</p>
-        </div>
+        <Link href={`/pokemon/${idx + 1}`} key={idx}>
+          <div>
+            <img className={styles.pokemonImage} src={`https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`} />
+            <p>{pokemon.name}</p>
+          </div>
+        </Link>
         ))}
-        <button onClick={() => setVisible(prev => prev + 9)}>Show more</button>
+        <button onClick={() => {setVisible(prev => prev + 9);}}>Show more</button>
         <button onClick={() => {setVisible(9); window.scrollTo(0, 0)}}>Load Less</button>
       </div>
     </div>
