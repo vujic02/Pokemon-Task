@@ -1,4 +1,6 @@
 .container {
+  width: 100%;
+  padding: 6rem 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -6,6 +8,6 @@
 .pokemonImage {
   width: 460px;
   height: 400px;
-  object-fit: contain;
+  object-fit: cover;
 }
 

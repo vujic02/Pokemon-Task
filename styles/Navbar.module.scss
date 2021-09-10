@@ -1,0 +1,36 @@
+.navbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  top: 0;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--gray);
+  background-color: var(--secondary-bg);
+
+  &__logo {
+    width: 120px;
+    height: 40px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--white);
+    opacity: 1;
+    transition: opacity 100ms ease;
+
+    &:hover {
+      transition: opacity 300ms ease;
+      opacity: 0.9;
+    }
+  }
+
+
+
+}

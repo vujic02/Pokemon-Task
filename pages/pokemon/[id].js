@@ -1,12 +1,10 @@
-import React, {useContext} from 'react'
-import {PokemonContext} from "../../context/state"
+import React from 'react'
+import Navbar from '../../components/Navbar';
 
 const PokemonDetails = ({pokemon}) => {
-
-  const {pokemonList, setPokemonList} = useContext(PokemonContext);
-
   return (
     <div>
+      <Navbar />
       {pokemon.name}
     </div>
   )

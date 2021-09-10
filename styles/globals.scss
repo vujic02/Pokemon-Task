@@ -1,0 +1,24 @@
+:root {
+  --primary-bg: #2C2F38;
+  --secondary-bg: #3E3D43;
+  --gray: #6e6e6e;
+  --white: #fff;
+  --yellow: #FFCD02;
+}
+
+* , *:before, *:after{ 
+  box-sizing:border-box; 
+  -moz-box-sizing:border-box; 
+  -webkit-box-sizing:border-box; 
+  -ms-box-sizing:border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--primary-bg);
+}
