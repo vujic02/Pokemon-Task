@@ -1,16 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 :root {
-  --primary-bg: #2C2F38;
-  --secondary-bg: #3E3D43;
+  --primary-bg: #2c2f38;
+  --secondary-bg: #3e3d43;
   --gray: #6e6e6e;
   --white: #fff;
-  --yellow: #FFCD02;
+  --yellow: #ffcd02;
 }
 
-* , *:before, *:after{ 
-  box-sizing:border-box; 
-  -moz-box-sizing:border-box; 
-  -webkit-box-sizing:border-box; 
-  -ms-box-sizing:border-box;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
 }
 
 html {
@@ -21,4 +25,21 @@ html {
 body {
   margin: 0;
   background-color: var(--primary-bg);
+  font-family: "Montserrat", sans-serif;
+}
+
+.main {
+  padding: 3rem 6rem;
+
+  @media screen and (max-width: 1600px) {
+    padding: 3rem 4rem;
+  }
+
+  @media screen and (max-width: 1366px) {
+    padding: 3rem 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 2rem 0rem;
+  }
 }
