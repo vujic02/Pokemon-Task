@@ -18,7 +18,7 @@ const Home = ({ pokemons }) => {
   return (
     <Layout>
       <Head>
-        <title>Pokemon Task</title>
+        <title>Pokemon Task | Home</title>
         <meta name="description" content="Learn more about pokemons" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
