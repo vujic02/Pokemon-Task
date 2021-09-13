@@ -1,14 +1,12 @@
-import '../styles/globals.css'
-import {ContextWrapper} from "../context/state"
+import "../styles/globals.scss";
+import { ContextWrapper } from "../context/state";
 
 function MyApp({ Component, pageProps }) {
-
   return (
     <ContextWrapper>
       <Component {...pageProps} />
     </ContextWrapper>
-    
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

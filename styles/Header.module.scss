@@ -1,0 +1,36 @@
+.header {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 6rem 0 4rem 0;
+  padding: 2rem 0;
+  z-index: -1;
+
+  &__line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--yellow);
+  }
+
+  &__text {
+    position: absolute;
+    top: -19px;
+    left: 200px;
+    padding: 4px 8px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--white);
+    border-left: 2px solid var(--yellow);
+    border-right: 2px solid var(--yellow);
+    border-top: 2px solid var(--yellow);
+    border-bottom: var(--primary-bg) solid 9px;
+
+    @media screen and (max-width: 768px) {
+      left: 100px;
+    }
+
+    @media screen and (max-width: 420px) {
+      left: 5px;
+    }
+  }
+}

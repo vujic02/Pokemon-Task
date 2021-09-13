@@ -1,0 +1,55 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary-bg);
+  width: 100%;
+  height: 200px;
+  border-top: 1px solid var(--gray);
+  margin-top: 5rem;
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+  }
+
+  &__icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  &__link {
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 300ms ease-in-out;
+
+    &:hover {
+      transition: color 300ms ease-in-out;
+      color: var(--yellow);
+    }
+  }
+
+  &__credits {
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 200;
+    margin-top: 10px;
+
+    a {
+      color: var(--yellow);
+      text-decoration: none;
+      margin-left: 4px;
+      transition: opacity 200ms ease-in-out;
+      opacity: 1;
+
+      &:hover {
+        opacity: 0.8;
+        transition: opacity 200ms ease-in-out;
+      }
+    }
+  }
+}
