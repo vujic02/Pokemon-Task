@@ -46,8 +46,11 @@ export const getStaticPaths = async () => {
   const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=99");
   const pokemons = await response.json();
 
+  // Mapping through pokemon.results array from the response of 99 pokemons that we fetched
   const paths = pokemons.results.map((pokemon, idx) => ({
-    params: { id: idx.toString() },
+    // Here I add 1 to the idx so it doesn't start from index 0 but from index 1, I do that because in getStaticProps function
+    // it will try to fetch a pokemon that doesn't exist on the api ( which is https://pokeapi.co/api/v2/pokemon/0/ )
+    params: { id: (idx + 1).toString() },
   }));
 
   return { paths, fallback: false };
