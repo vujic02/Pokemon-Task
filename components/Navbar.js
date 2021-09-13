@@ -12,9 +12,9 @@ const Navbar = () => {
           alt="logo"
         />
       </Link>
-      <a className={styles.navbar__link} href="#top">
+      <p className={styles.navbar__link} onClick={() => window.scrollTo(0, 0)}>
         Scroll to top
-      </a>
+      </p>
     </div>
   );
 };

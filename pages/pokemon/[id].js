@@ -11,10 +11,10 @@ const PokemonDetails = ({ pokemon }) => {
     <Layout>
       <div className="main">
         <Head>
-          <title>Pokemon | {pokemon.name}</title>
+          <title>Pokemon | {name}</title>
           <meta
             name="description"
-            content={`Learn more about ${pokemon.name}`}
+            content={`Learn more about ${name}`}
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>
@@ -25,19 +25,12 @@ const PokemonDetails = ({ pokemon }) => {
             className={styles.pokemon__image}
           />
           <div className={styles.pokemon__container}>
-            <h1 className={styles.pokemon__heading}>{pokemon.name}</h1>
-            <h2 className={styles.pokemon__abilities}>
-              Abilities: overgrow, chlorophyll
+            <h1 className={styles.pokemon__heading}>{name}</h1>
+            <h2 className={styles.pokemon__abilities} data-testid="pokemon-abilities">
+              Abilities: {pokemon.abilities.map((_, idx) => _.ability.name.charAt(0).toUpperCase() + _.ability.name.slice(1) + (idx === pokemon.abilities.length - 1 ? "." : ", "))}
             </h2>
-            <p className={styles.pokemon__moves}>
-              Moves: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-              sem neque, ultrices maximus auctor eu, tempor eu justo. Nunc
-              egestas libero nec erat euismod, id rutrum risus laoreet. Sed ut
-              quam leo. Sed congue vehicula sapien ac placerat. Donec mattis
-              elit nunc, eu tincidunt enim viverra aliquam. Duis elementum
-              varius maximus. Integer porttitor odio est, eu gravida sapien
-              maximus eu. Donec ut nisi elementum, feugiat purus ac, semper
-              eros.{" "}
+            <p className={styles.pokemon__moves} data-testid="pokemon-moves">
+              Moves: {pokemon.moves.map((_, idx) => _.move.name.charAt(0).toUpperCase() + _.move.name.slice(1) + (idx === pokemon.moves.length - 1 ? "." : ", "))}
             </p>
             <Link href="/">
               <div className={styles.pokemon__button}>Back to home</div>
@@ -65,8 +58,6 @@ export const getStaticProps = async ({ params }) => {
     `https://pokeapi.co/api/v2/pokemon/${params.id}/`
   );
   const pokemons = await response.json();
-
-  console.log(params, "params");
 
   return {
     props: {

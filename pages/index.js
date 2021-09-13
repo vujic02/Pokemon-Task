@@ -7,8 +7,7 @@ import { Header, Layout } from "../components/index";
 
 const Home = ({ pokemons }) => {
   // Get all states from PokemonContext
-  const { pokemonList, setPokemonList, visible, setVisible } =
-    useContext(PokemonContext);
+  const { pokemonList, setPokemonList, visible, setVisible } = useContext(PokemonContext);
 
   useEffect(() => {
     // After the page loads, set the context state to the pokemons that we fetched
@@ -26,7 +25,7 @@ const Home = ({ pokemons }) => {
       <div className="main">
         <Header headerText="All Pokemons" />
 
-        <div className={styles.pokemons} id="top">
+        <div className={styles.pokemons}>
           {/* From pokemon results array we slice from index 0 to visible state which is 9 (initially), then after clicking the show more button we add 9 to visible state, which dynamically updates how many pokemons are shown */}
           {pokemons.results.slice(0, visible).map((pokemon, idx) => (
             <Link href={`/pokemon/${idx + 1}`} key={idx}>
@@ -67,7 +66,7 @@ const Home = ({ pokemons }) => {
             >
               Show less pokemons
               <img
-                src="/images/arrow-down.png"
+                src="/images/arrow-up.png"
                 className={styles.buttons__button__icon}
               />
             </div>

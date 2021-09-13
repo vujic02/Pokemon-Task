@@ -18,11 +18,11 @@
   }
 
   &__link {
-    text-decoration: none;
     font-size: 2rem;
     font-weight: 500;
     color: var(--white);
     transition: color 200ms ease;
+    cursor: pointer;
 
     &:hover {
       transition: color 300ms ease;
